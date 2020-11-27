@@ -142,3 +142,7 @@ dmypy.json
 
 # profiling data
 .prof
+
+
+dev.db
+test.db

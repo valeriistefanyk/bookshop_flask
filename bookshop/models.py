@@ -10,4 +10,4 @@ class Book(db.Model):
     def validate_title(self, key, title):
         if len(title.strip()) <= 2:
             raise ValueError('Needs to have a real title')
-        return name
+        return title

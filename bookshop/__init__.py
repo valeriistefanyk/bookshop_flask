@@ -1,4 +1,5 @@
 from flask import Flask
+
 from bookshop.config import configuration
 from bookshop.extenstions import db
 

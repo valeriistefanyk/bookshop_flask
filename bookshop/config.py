@@ -6,7 +6,7 @@ class DevConfig(BaseConfig):
     SQLALCHEMY_ECHO = True
 
 class TestConfig(BaseConfig):
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///data/test.db'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db'
     TESTING = True
 
 class ProdConfig(BaseConfig):
