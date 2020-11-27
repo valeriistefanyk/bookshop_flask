@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 from bookshop.config import configuration
 from bookshop.extenstions import db
@@ -12,6 +12,10 @@ def create_app(environment_name='dev'):
 
     @app.route('/')
     def index():
-        return '<h1>INDEX PAGE</h1>'
+        return render_template('home/index.html')
 
+    @app.errorhandler(404)
+    def not_found(exception):
+        return render_template('404.html'), 404
+        
     return app
