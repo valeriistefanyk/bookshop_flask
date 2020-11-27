@@ -2,6 +2,7 @@ from flask import Flask, render_template
 
 from bookshop.config import configuration
 from bookshop.extenstions import db
+from bookshop.blueprints.books import books
 
 
 def create_app(environment_name='dev'):
@@ -14,9 +15,8 @@ def create_app(environment_name='dev'):
     def index():
         return render_template('home/index.html')
 
-    @app.route('/books')
-    def index_books():
-        return render_template('books/index.html')
+    app.register_blueprint(books, url_prefix='/books')
+
 
     @app.errorhandler(404)
     def not_found(exception):
