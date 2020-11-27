@@ -1,15 +1,21 @@
-# Flask application for viewing information about concerts and buying tickets for concerts.
+# Flask application for the sale and purchase of books of the Ukrainian and not only publishing house
 
 ## Install all dependencies:
+```bash
 pip install -r requirements.txt
+```
 
 ## Export environment variables:
-FLASK_APP="bookshop" | "bookshop:create_app(ENV_NAME)"
-FLASK_ENV="development" | "production"
+```shell
+FLASK_APP="bookshop:create_app(ENV_NAME)"
+FLASK_ENV="development"
+```
 
 *ENV_NAME - 'prod' | 'test' | 'dev'
 
 
 ## Start pytest:
+```shell
 pytest
 pytest --cov-report term-missing --cov=bookshop
+```
