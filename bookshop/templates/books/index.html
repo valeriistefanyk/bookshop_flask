@@ -1,0 +1,24 @@
+{% extends 'base_layout.html '%}
+
+{% block title %}Всі книги{% endblock %}
+
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+        <th>Назва</th>
+        <th>Опис</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for book in books%}
+    <tr>
+      <td><a href="">
+        {{ book.title }}
+      </a></td>
+      <td>{{ book.description}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -14,8 +14,12 @@ def create_app(environment_name='dev'):
     def index():
         return render_template('home/index.html')
 
+    @app.route('/books')
+    def index_books():
+        return render_template('books/index.html')
+
     @app.errorhandler(404)
     def not_found(exception):
         return render_template('404.html'), 404
-        
+
     return app
