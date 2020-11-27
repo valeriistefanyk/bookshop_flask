@@ -2,9 +2,11 @@ class BaseConfig:
     pass
 
 class DevConfig(BaseConfig):
-    pass
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///dev.db'
+    SQLALCHEMY_ECHO = True
 
 class TestConfig(BaseConfig):
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///data/test.db'
     TESTING = True
 
 class ProdConfig(BaseConfig):
