@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+{% block title %}Нова книга{% endblock %}
+
+{% block content %}
+<form method="POST">
+    <label for="title">Назва книги</label>
+    <input type="text" name="title" id="title" class="form-control">
+    <br>
+    <label for="description">Опис</label>
+    <input type="text" name="description" id="description" class="form-control">
+    <br>
+    <button type="submit" class="btn btn-primary">Додати нову книгу</button>
+</form>
+{% endblock %}
