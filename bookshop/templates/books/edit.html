@@ -1,13 +1,13 @@
 {% extends 'base_layout.html' %}
-{% from "_formhelpers.html" import render_field %}
+{% from '_formhelpers.html' import render_field %}
 
-{% block title %}Нова книга{% endblock %}
+{% block title %}{{ book.title }}{% endblock %}
 
 {% block content %}
 <form method="POST">
     {{ form.csrf_token }}
     {{ render_field(form.title) }}
     {{ render_field(form.description) }}
-    <button type="submit" class="btn btn-primary">Додати нову книгу</button>
+    <button type="submit" class="btn btn-primary">Редагувати Книгу</button>
 </form>
 {% endblock %}

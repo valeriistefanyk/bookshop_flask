@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 
 from bookshop.config import configuration
-from bookshop.extenstions import db
+from bookshop.extenstions import db, csrf
 from bookshop.blueprints.books import books
 
 
@@ -10,7 +10,8 @@ def create_app(environment_name='dev'):
     app.config.from_object(configuration[environment_name])
 
     db.init_app(app)
-
+    csrf.init_app(app)
+    
     @app.route('/')
     def index():
         return render_template('home/index.html')
