@@ -23,6 +23,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         login_user(user)
+        flash("Реєстаріція пройшла успішно", "success")
         return redirect(url_for('books.index'))
     return render_template('users/register.html', form=form)
 
