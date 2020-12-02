@@ -19,6 +19,7 @@ def details(book_id):
     return render_template('books/detail.html', book=book)
 
 @books.route('/create', methods=['GET', 'POST'])
+@login_required
 def create():
     form = BookForm()
     if form.validate_on_submit():

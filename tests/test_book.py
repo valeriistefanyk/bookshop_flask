@@ -57,7 +57,7 @@ def test_creation(client, init_database, authenticated_request):
     assert b'test title' in response.data
     assert b'BookShop' in response.data
 
-def test_invalid_creation(client, init_database):
+def test_invalid_creation(client, init_database, authenticated_request):
     response = client.post(url_for('books.create'),
                         data=dict(title=' s ', description='is not valid'),
                         follow_redirects=True)
@@ -84,3 +84,8 @@ def test_edit_submission(client, init_database, sample_book, authenticated_reque
     assert 'is persisted' in str(response.data)
     assert old_description not in str(response.data)
     assert old_title not in str(response.data)
+
+def test_new_page_unauthenticated_user(client, init_database):
+    response = client.get(url_for('books.create'))
+    assert response.status_code == 302
+    assert response.location == url_for('users.login', _external=True)
