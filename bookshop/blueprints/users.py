@@ -25,7 +25,7 @@ def unauthorized():
 @users.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
-        flash('Ви не можете зареєструвати акаунт, тому що акаунт вже'
+        flash('Ви не можете зареєструвати акаунт, тому що акаунт вже '
             'зареєстрований. Якщо ви бажаєте зареєструвати нового користувача, '
             'Вам потрібно спочатку вийти з цього акаунту', 'warning')
         return redirect('/')
