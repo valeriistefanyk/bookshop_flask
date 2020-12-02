@@ -13,10 +13,11 @@
       <a class="navbar-brand" href="/">BookShop</a>
       <div class="navbar-item form-inline">
         {% if current_user.is_authenticated %}
-          YOU
+          {{ current_user.email }}
+          <a class="nav-link" href="{{ url_for('users.logout') }}">Вийти</a>
         {% else %}
-          <a class="nav-link" href="{{ url_for('users.login') }}">Login</a>
-          <a class="nav-link" href="{{ url_for('users.register') }}">Register</a>
+          <a class="nav-link" href="{{ url_for('users.login') }}">Увійти</a>
+          <a class="nav-link" href="{{ url_for('users.register') }}">Реєстарція</a>
         {% endif %}
       </div>
     </nav>
