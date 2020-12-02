@@ -1,6 +1,7 @@
 from flask import (Blueprint, redirect, url_for, render_template, 
                 flash, session, request)
-from flask_login import (login_user, current_user, login_required)
+from flask_login import (login_user, current_user, login_required,
+                logout_user)
 
 from bookshop.forms import SignupForm
 from bookshop.models import User
@@ -45,3 +46,8 @@ def login():
         return redirect(session.get('after_login') or 
                             url_for('books.index'))
     return render_template('users/login.html', form=form)
+
+@users.route('/logout', methods=['GET', 'POST'])
+def logout():
+    logout_user()
+    return redirect('/')
