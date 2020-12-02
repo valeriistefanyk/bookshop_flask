@@ -65,3 +65,56 @@ def test_already_logged_in_register(client, init_database, authenticated_request
     response = client.post(url_for('users.register'), data=VALID_REGISTER_PARAMS, follow_redirects=True)
     assert response.status_code == 200
     assert 'акаунт вже зареєстрований'.encode() in response.data
+
+def test_get_login(client, init_database):
+    response = client.get(url_for('users.login'))
+    assert response.status_code == 200
+    assert 'Логін'.encode() in response.data
+    assert 'Email' in str(response.data)
+    assert 'Пароль'.encode() in response.data
+    assert 'Підтверження пароля'.encode() not in response.data
+
+def test_login(client, init_database):
+    create_user()
+    response = client.post(url_for('users.login'), data=VALID_LOGIN_PARAMS, follow_redirects=True)
+    assert response.status_code == 200
+    assert 'Вхід виконано успішно'.encode() in response.data
+    assert url_for('users.logout') in str(response.data)
+
+def test_already_logged_in_login(client, init_database, authenticated_request):
+    response = client.post(url_for('users.login'), data=VALID_LOGIN_PARAMS, follow_redirects=True)
+    assert response.status_code == 200
+    assert 'Ви вже залогінені'.encode() in response.data
+
+def test_login_invalid_email(client, init_database):
+    create_user()
+    response = client.post(url_for('users.login'), data=dict(
+        email="test",
+        password=EXAMPLE_PASSWORD
+    ), follow_redirects=True)
+    assert response.status_code == 200
+    assert 'Invalid email address' in str(response.data)
+
+def test_login_no_user(client, init_database):
+    create_user()
+    response = client.post(url_for('users.login'), data=dict(
+        email='test@notexistent.com',
+        password=EXAMPLE_PASSWORD
+    ), follow_redirects=True)
+    assert response.status_code == 200
+    assert 'Неправильний email або пароль'.encode() in response.data
+
+def test_login_bad_password(client, init_database):
+    create_user()
+    response = client.post(url_for('users.login'), data=dict(
+        email=EXAMPLE_EMAIL,
+        password='badpassword'
+    ), follow_redirects=True)
+    assert response.status_code == 200
+    assert 'Неправильний email або пароль'.encode() in response.data
+
+def test_logout(client, init_database, authenticated_request):
+    response = client.post(url_for('users.logout'), follow_redirects=True)
+    assert response.status_code == 200
+    assert url_for('users.login') in str(response.data)
+    assert url_for('users.register') in str(response.data)
