@@ -14,6 +14,11 @@ VALID_REGISTER_PARAMS = {
     'confirm': EXAMPLE_PASSWORD
 }
 
+VALID_LOGIN_PARAMS = {
+    'email': EXAMPLE_EMAIL,
+    'password': EXAMPLE_PASSWORD
+}
+
 def create_user(email=EXAMPLE_EMAIL, password=EXAMPLE_PASSWORD):
     user = User.create(email, password)
     db.session.add(user)
@@ -35,8 +40,28 @@ def test_get_register(client, init_database):
     assert 'Пароль'.encode() in response.data
 
 def test_register(client, init_database):
-    response = client.post('/register', data=VALID_REGISTER_PARAMS, follow_redirects=True)
+    response = client.post(url_for('users.register'), data=VALID_REGISTER_PARAMS, follow_redirects=True)
     assert response.status_code == 200
     assert 'Реєстрація пройшла успішно'.encode() in response.data
     assert EXAMPLE_EMAIL in str(response.data)
-    assert b'BookShop' in response.data 
+    assert b'BookShop' in response.data
+
+def test_register_invalid(client, init_database):
+    invalid_data = VALID_REGISTER_PARAMS.copy()
+    invalid_data['email'] = 'abc'
+    response = client.post(url_for('users.register'), data=invalid_data, follow_redirects=True)
+    assert response.status_code == 200
+    assert b'Invalid email' in response.data
+
+def test_register_with_existing_user(client, init_database):
+    user = create_user()
+    response = client.post(url_for('users.register'), data=VALID_REGISTER_PARAMS, follow_redirects=True)
+    assert response.status_code == 200
+    assert 'Акаунт з цим email вже існує'.encode() in response.data
+    assert 'Реєстрація пройшла успішно'.encode() not in response.data
+    assert 'акаунт вже зареєстрований'.encode() not in response.data
+
+def test_already_logged_in_register(client, init_database, authenticated_request):
+    response = client.post(url_for('users.register'), data=VALID_REGISTER_PARAMS, follow_redirects=True)
+    assert response.status_code == 200
+    assert 'акаунт вже зареєстрований'.encode() in response.data
