@@ -13,6 +13,7 @@ def index():
     return render_template('books/index.html', books=all_book)
 
 @books.route('/<int:book_id>')
+@login_required
 def details(book_id):
     book = Book.query.get_or_404(book_id)
     return render_template('books/detail.html', book=book)

@@ -18,11 +18,17 @@ def load_user(user_id):
 @login_manager.unauthorized_handler
 def unauthorized():
     session['after_login'] = request.url
+    flash('Для доступу потрібно зареєструватись', 'warning')
     return redirect(url_for('users.login'))
 
 
 @users.route('/register', methods=['GET', 'POST'])
 def register():
+    if current_user.is_authenticated:
+        flash('Ви не можете зареєструвати акаунт, тому що акаунт вже'
+            'зареєстрований. Якщо ви бажаєте зареєструвати нового користувача, '
+            'Вам потрібно спочатку вийти з цього акаунту', 'warning')
+        return redirect('/')
     form = SignupForm()
     if form.validate_on_submit():
         user = User.create(form.email.data, form.password.data)
