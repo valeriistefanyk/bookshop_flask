@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, redirect, request, url_for
+from flask_login import login_required
 from bookshop.models import Book
 from bookshop.extenstions import db
 from bookshop.forms import BookForm
@@ -27,6 +28,7 @@ def create():
     return render_template('books/create.html', form=form)
 
 @books.route('/<int:book_id>/edit', methods=['GET', 'POST'])
+@login_required
 def edit(book_id):
     book = Book.query.get_or_404(book_id)
     form = BookForm(obj=book)

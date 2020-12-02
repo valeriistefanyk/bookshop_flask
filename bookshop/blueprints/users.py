@@ -1,6 +1,6 @@
-from flask import (Blueprint, redirect, url_for, 
-                render_template, flash)
-from flask_login import login_user, current_user
+from flask import (Blueprint, redirect, url_for, render_template, 
+                flash, session, request)
+from flask_login import (login_user, current_user, login_required)
 
 from bookshop.forms import SignupForm
 from bookshop.models import User
@@ -13,6 +13,11 @@ users = Blueprint('users', __name__)
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
+
+@login_manager.unauthorized_handler
+def unauthorized():
+    session['after_login'] = request.url
+    return redirect(url_for('users.login'))
 
 
 @users.route('/register', methods=['GET', 'POST'])
@@ -37,5 +42,6 @@ def login():
         user = User.query.filter_by(email=form.email.data).one()
         login_user(user)
         flash('Вхід виконано успішно', 'success')
-        return redirect(url_for('books.index'))
-    return render_template('users/login.html')
+        return redirect(session.get('after_login') or 
+                            url_for('books.index'))
+    return render_template('users/login.html', form=form)
