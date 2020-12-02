@@ -10,6 +10,14 @@
 <body>
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="/">BookShop</a>
+      <div class="navbar-item form-inline">
+        {% if current_user.is_authenticated %}
+          YOU
+        {% else %}
+          <a class="nav-link" href="{{ url_for('users.login') }}">Login</a>
+          <a class="nav-link" href="{{ url_for('users.register') }}">Register</a>
+        {% endif %}
+      </div>
     </nav>
     <div class="container mt-3">
       {% block content %}{% endblock %}

@@ -12,7 +12,9 @@ def create_app(environment_name='dev'):
 
     db.init_app(app)
     csrf.init_app(app)
+    login_manager.init_app(app)
 
+    @login_manager.user_loader
     @app.route('/')
     def index():
         return render_template('home/index.html')

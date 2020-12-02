@@ -1,5 +1,7 @@
 from werkzeug.security import generate_password_hash
 from sqlalchemy.orm import validates
+from flask_login import UserMixin
+
 from bookshop.extenstions import db
 
 
@@ -14,7 +16,7 @@ class Book(db.Model):
             raise ValueError('Needs to have a real title')
         return title
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(255), nullable=False)
     password = db.Column(db.String(255), nullable=False)
