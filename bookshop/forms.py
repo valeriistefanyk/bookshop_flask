@@ -35,7 +35,7 @@ class LoginForm(FlaskForm):
         if not check_validate:
             return False
         user = User.query.filter_by(email=self.email.data).first()
-        if not user and not check_password_hash(
+        if not user or not check_password_hash(
                             user.password, 
                             self.password.data):
             self.email.errors.append('Неправильний email або пароль')
