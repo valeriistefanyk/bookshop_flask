@@ -35,7 +35,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         login_user(user)
-        flash(_('Registered success'), 'success')
+        flash(_('Registration successfully'), 'success')
         return redirect(url_for('books.index'))
     return render_template('users/register.html', form=form)
 

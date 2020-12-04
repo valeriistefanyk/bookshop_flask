@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-04 19:23+0200\n"
+"POT-Creation-Date: 2020-12-04 19:35+0200\n"
 "PO-Revision-Date: 2020-12-04 16:08+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru_RU\n"
@@ -65,7 +65,8 @@ msgstr ""
 "Вам сначала необходимо выйти из этого аккаунта"
 
 #: blueprints/users.py:38
-msgid "Registered success"
+#, fuzzy
+msgid "Registration successfully"
 msgstr "Регистрация прошла успешно"
 
 #: blueprints/users.py:45
