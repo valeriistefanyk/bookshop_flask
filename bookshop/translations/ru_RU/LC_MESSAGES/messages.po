@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-04 19:47+0200\n"
+"POT-Creation-Date: 2020-12-04 21:14+0200\n"
 "PO-Revision-Date: 2020-12-04 16:08+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru_RU\n"
@@ -19,43 +19,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: forms.py:11 templates/books/index.html:9
+#: bookshop/forms.py:11 bookshop/templates/books/index.html:9
 msgid "Title"
 msgstr "Название"
 
-#: forms.py:12 templates/books/index.html:10
+#: bookshop/forms.py:12 bookshop/templates/books/index.html:10
 msgid "Description"
 msgstr "Описание"
 
-#: forms.py:15 forms.py:31
+#: bookshop/forms.py:15 bookshop/forms.py:31
 msgid "Email"
 msgstr "Email"
 
-#: forms.py:16 forms.py:32
+#: bookshop/forms.py:16 bookshop/forms.py:32
 msgid "Password"
 msgstr "Пароль"
 
-#: forms.py:16
+#: bookshop/forms.py:16
 msgid "Passwords must match"
 msgstr "Пароли должны совпадать"
 
-#: forms.py:17
+#: bookshop/forms.py:17
 msgid "Password confirm"
 msgstr "Подтверждение пароля"
 
-#: forms.py:26
+#: bookshop/forms.py:26
 msgid "An account with this email already exists"
 msgstr "Аккаунт с таким email уже существует"
 
-#: forms.py:42
+#: bookshop/forms.py:42
 msgid "Invalid email or password"
 msgstr "Неправильный email или пароль"
 
-#: blueprints/users.py:22
+#: bookshop/blueprints/users.py:22
 msgid "You need to login"
 msgstr "Для доступа необходимо войти"
 
-#: blueprints/users.py:29
+#: bookshop/blueprints/users.py:29
 msgid ""
 "You cannot register an account because the account is already registered."
 " If you want to register a new user, you must logout this account"
@@ -64,90 +64,90 @@ msgstr ""
 "зарегистрирован. Если Вы желаете зарегистрировать нового пользователя, "
 "Вам сначала необходимо выйти из этого аккаунта"
 
-#: blueprints/users.py:38
+#: bookshop/blueprints/users.py:38
 #, fuzzy
 msgid "Registration successfully"
 msgstr "Регистрация прошла успешно"
 
-#: blueprints/users.py:45
+#: bookshop/blueprints/users.py:45
 msgid "You are already logged in"
 msgstr "Вы уже вошли"
 
-#: blueprints/users.py:51
+#: bookshop/blueprints/users.py:51
 msgid "Logged in successfully"
 msgstr "Вход выполнен успешно"
 
-#: templates/404.html:3
+#: bookshop/templates/404.html:3
 msgid "Page not found"
 msgstr "Страница не найдена"
 
-#: templates/404.html:6
+#: bookshop/templates/404.html:6
 msgid "Ooops... We coultn't find that page"
 msgstr "Упс... Мы не смогли найти эту страницу"
 
-#: templates/404.html:9
+#: bookshop/templates/404.html:9
 msgid "Back to the main page"
 msgstr "Вернуться на главную страницу"
 
-#: templates/base_layout.html:9
+#: bookshop/templates/base_layout.html:9
 msgid "Books by Ukrainian publishers"
 msgstr "Книги украинского издательства"
 
-#: templates/base_layout.html:18
+#: bookshop/templates/base_layout.html:18
 msgid "Logout"
 msgstr "Выйти"
 
-#: templates/base_layout.html:20 templates/users/login.html:4
-#: templates/users/login.html:11
+#: bookshop/templates/base_layout.html:20 bookshop/templates/users/login.html:4
+#: bookshop/templates/users/login.html:11
 msgid "Login"
 msgstr "Войти"
 
-#: templates/base_layout.html:21
+#: bookshop/templates/base_layout.html:21
 msgid "Register"
 msgstr "Регистрация"
 
-#: templates/books/404.html:3
+#: bookshop/templates/books/404.html:3
 msgid "Book not found"
 msgstr "Книгу не найдено"
 
-#: templates/books/404.html:6
+#: bookshop/templates/books/404.html:6
 msgid "Ooops... We coultn't find that book"
 msgstr "Упс... Мы не смогли найти эту книгу"
 
-#: templates/books/404.html:9
+#: bookshop/templates/books/404.html:9
 #, fuzzy
 msgid "Back to books catalogue"
 msgstr "Католог книг"
 
-#: templates/books/create.html:4
+#: bookshop/templates/books/create.html:4
 msgid "New Book"
 msgstr "Новая книга"
 
-#: templates/books/create.html:11
+#: bookshop/templates/books/create.html:11
 msgid "Add New Book"
 msgstr "Добавить новую книгу"
 
-#: templates/books/detail.html:10
+#: bookshop/templates/books/detail.html:10
 msgid "Not available"
 msgstr "Нет в наличии"
 
-#: templates/books/edit.html:11
+#: bookshop/templates/books/edit.html:11
 msgid "Edit Book"
 msgstr "Редактировать Книгу"
 
-#: templates/books/index.html:3
+#: bookshop/templates/books/index.html:3
 msgid "All Books"
 msgstr "Все книги"
 
-#: templates/home/index.html:5
+#: bookshop/templates/home/index.html:5
 msgid "Book Catalogue"
 msgstr "Католог книг"
 
-#: templates/users/register.html:4
+#: bookshop/templates/users/register.html:4
 msgid "Register User"
 msgstr "Регистрация пользователя"
 
-#: templates/users/register.html:12
+#: bookshop/templates/users/register.html:12
 msgid "Sign Up"
 msgstr "Зарегистрироваться"
 
