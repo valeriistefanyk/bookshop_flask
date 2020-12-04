@@ -5,6 +5,11 @@ class BaseConfig:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     WTF_CSRF_ENABLED = True
     SECRET_KEY = os.getenv('SECRET_KEY', 'rand01013232')
+    LANGUAGES = {
+        'uk': 'Ukrainian',
+        'ru': 'Russian',
+        'en': 'English',
+    }
 
 class DevConfig(BaseConfig):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///dev.db'

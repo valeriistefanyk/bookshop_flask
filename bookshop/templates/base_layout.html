@@ -11,6 +11,7 @@
 <body>
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="/">BookShop</a>
+
       <div class="navbar-item form-inline">
         {% if current_user.is_authenticated %}
           {{ current_user.email }}
@@ -18,6 +19,20 @@
         {% else %}
           <a class="nav-link" href="{{ url_for('users.login') }}">Увійти</a>
           <a class="nav-link" href="{{ url_for('users.register') }}">Реєстарція</a>
+          <select class="form-control" onchange="location = this.value;">
+            {% for language in AVAILABLE_LANGUAGES.items() %}
+              {% if CURRENT_LANGUAGE == language[0] %}
+                  <option 
+                    selected
+                    value="{{ url_for('set_language', language=language[0]) }}">
+                      {{ language[1] }}
+                    </option>
+              {% else %}
+                  <option 
+                    value="{{ url_for('set_language', language=language[0]) }}">{{ language[1] }}</option>
+              {%  endif %}
+            {% endfor %}
+           </select>
         {% endif %}
       </div>
     </nav>

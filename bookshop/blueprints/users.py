@@ -2,6 +2,7 @@ from flask import (Blueprint, redirect, url_for, render_template,
                 flash, session, request)
 from flask_login import (login_user, current_user, login_required,
                 logout_user)
+from flask_babel import _
 
 from bookshop.forms import SignupForm
 from bookshop.models import User
@@ -18,7 +19,7 @@ def load_user(user_id):
 @login_manager.unauthorized_handler
 def unauthorized():
     session['after_login'] = request.url
-    flash('Для доступу потрібно зареєструватись', 'warning')
+    flash(_('You need to login'), 'warning')
     return redirect(url_for('users.login'))
 
 
