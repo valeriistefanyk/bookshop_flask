@@ -13,6 +13,14 @@ FLASK_ENV="development"
 
 *ENV_NAME - 'prod' | 'test' | 'dev'
 
+## Compile translations
+```shell
+pybabel compile -d bookshop/translations
+```
+or use flask cli:
+```shell
+flask translate compile
+```
 
 ## Start pytest:
 ```shell
