@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-04 19:35+0200\n"
+"POT-Creation-Date: 2020-12-04 19:47+0200\n"
 "PO-Revision-Date: 2020-12-04 16:08+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk_UA\n"
@@ -77,6 +77,18 @@ msgstr "Ви вже увійшли"
 msgid "Logged in successfully"
 msgstr "Вхід виконано успішно"
 
+#: templates/404.html:3
+msgid "Page not found"
+msgstr "Сторінку не знайдено"
+
+#: templates/404.html:6
+msgid "Ooops... We coultn't find that page"
+msgstr "Упс... Ми не змогли знайти цю сторінку"
+
+#: templates/404.html:9
+msgid "Back to the main page"
+msgstr "Повернутись на головну сторінку"
+
 #: templates/base_layout.html:9
 msgid "Books by Ukrainian publishers"
 msgstr "Книги українського видавництва"
@@ -93,6 +105,19 @@ msgstr "Увійти"
 #: templates/base_layout.html:21
 msgid "Register"
 msgstr "Реєстрація"
+
+#: templates/books/404.html:3
+msgid "Book not found"
+msgstr "Книгу не знайдено"
+
+#: templates/books/404.html:6
+msgid "Ooops... We coultn't find that book"
+msgstr "Упс... Ми не змогли знайти цю книгу"
+
+#: templates/books/404.html:9
+#, fuzzy
+msgid "Back to books catalogue"
+msgstr "Каталог книг"
 
 #: templates/books/create.html:4
 msgid "New Book"
