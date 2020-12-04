@@ -17,6 +17,10 @@ FLASK_ENV="development"
 ```shell
 pybabel compile -d bookshop/translations
 ```
+or use flask cli:
+```shell
+flask translate compile
+```
 
 ## Start pytest:
 ```shell
