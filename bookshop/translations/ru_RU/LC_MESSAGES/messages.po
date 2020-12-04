@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-04 16:03+0200\n"
+"POT-Creation-Date: 2020-12-04 17:50+0200\n"
 "PO-Revision-Date: 2020-12-04 16:08+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru_RU\n"
@@ -22,6 +22,26 @@ msgstr ""
 #: blueprints/users.py:22
 msgid "You need to login"
 msgstr "Для доступа необходимо войти"
+
+#: blueprints/users.py:29
+msgid ""
+"You cannot register an account because the account is already registered."
+" If you want to register a new user, you must logout this account"
+msgstr ""
+"Вы не можете зарегистрировать аккаунт, так как аккаунт уже зарегистрирован. Если Вы"
+" желаете зарегистрировать нового пользователя, Вам сначала необходимо выйти из этого аккаунта"
+
+#: blueprints/users.py:41
+msgid "Registered success"
+msgstr "Регистрация прошла успешно"
+
+#: blueprints/users.py:49
+msgid "You are already logged in"
+msgstr "Вы уже вошли"
+
+#: blueprints/users.py:56
+msgid "Logged in successfully"
+msgstr "Вход выполнен успешно"
 
 #: templates/users/login.html:4 templates/users/login.html:11
 msgid "Login"

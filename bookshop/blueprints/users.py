@@ -26,9 +26,8 @@ def unauthorized():
 @users.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
-        flash('Ви не можете зареєструвати акаунт, тому що акаунт вже '
-            'зареєстрований. Якщо ви бажаєте зареєструвати нового користувача, '
-            'Вам потрібно спочатку вийти з цього акаунту', 'warning')
+        flash(_('You cannot register an account because the account is already registered. '
+                'If you want to register a new user, you must logout this account'), 'warning')
         return redirect('/')
     form = SignupForm()
     if form.validate_on_submit():
@@ -36,20 +35,20 @@ def register():
         db.session.add(user)
         db.session.commit()
         login_user(user)
-        flash("Реєстрація пройшла успішно", "success")
+        flash(_('Registered success'), 'success')
         return redirect(url_for('books.index'))
     return render_template('users/register.html', form=form)
 
 @users.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        flash('Ви вже залогінені', 'warning')
+        flash(_('You are already logged in'), 'warning')
         return redirect(url_for('books.index'))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).one()
         login_user(user)
-        flash('Вхід виконано успішно', 'success')
+        flash(_('Logged in successfully'), 'success')
         return redirect(session.get('after_login') or 
                             url_for('books.index'))
     return render_template('users/login.html', form=form)
