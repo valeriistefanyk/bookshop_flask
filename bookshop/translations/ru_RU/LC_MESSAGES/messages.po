@@ -117,7 +117,7 @@ msgstr "Упс... Мы не смогли найти эту книгу"
 #: bookshop/templates/books/404.html:9
 #, fuzzy
 msgid "Back to books catalogue"
-msgstr "Католог книг"
+msgstr "Каталог книг"
 
 #: bookshop/templates/books/create.html:4
 msgid "New Book"
@@ -141,7 +141,7 @@ msgstr "Все книги"
 
 #: bookshop/templates/home/index.html:5
 msgid "Book Catalogue"
-msgstr "Католог книг"
+msgstr "Каталог книг"
 
 #: bookshop/templates/users/register.html:4
 msgid "Register User"
