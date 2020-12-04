@@ -29,7 +29,7 @@ def authenticated_request(client):
     yield client
 
 @pytest.fixture
-def language_session(client):
+def set_language_in_session(client):
     with client.session_transaction() as session:
         session['language'] = 'en'
     yield client
