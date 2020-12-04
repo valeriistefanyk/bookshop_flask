@@ -1,11 +1,11 @@
 {% extends 'base_layout.html '%}
 
-{% block title %}Книгу не знайдено{% endblock %}
+{% block title %}{{ _('Book not found') }}{% endblock %}
 
 {% block content %}
-  <h1>Упс... Ми не змогли знайти цю книгу</h1>
+  <h1>{{ _('Ooops... We coultn't find that book') }}</h1>
   <hr>
   <a href="" class="btn btn-primary">
-    Перейти до каталогу книг
+    {{ _('Back to books catalogue') }}
   </a>
 {% endblock %}

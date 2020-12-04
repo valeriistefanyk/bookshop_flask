@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-04 17:50+0200\n"
+"POT-Creation-Date: 2020-12-04 19:23+0200\n"
 "PO-Revision-Date: 2020-12-04 16:08+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru_RU\n"
@@ -19,6 +19,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
+#: forms.py:11 templates/books/index.html:9
+msgid "Title"
+msgstr "Название"
+
+#: forms.py:12 templates/books/index.html:10
+msgid "Description"
+msgstr "Описание"
+
+#: forms.py:15 forms.py:31
+msgid "Email"
+msgstr "Email"
+
+#: forms.py:16 forms.py:32
+msgid "Password"
+msgstr "Пароль"
+
+#: forms.py:16
+msgid "Passwords must match"
+msgstr "Пароли должны совпадать"
+
+#: forms.py:17
+msgid "Password confirm"
+msgstr "Подтверждение пароля"
+
+#: forms.py:26
+msgid "An account with this email already exists"
+msgstr "Аккаунт с таким email уже существует"
+
+#: forms.py:42
+msgid "Invalid email or password"
+msgstr "Неправильный email или пароль"
+
 #: blueprints/users.py:22
 msgid "You need to login"
 msgstr "Для доступа необходимо войти"
@@ -28,22 +60,68 @@ msgid ""
 "You cannot register an account because the account is already registered."
 " If you want to register a new user, you must logout this account"
 msgstr ""
-"Вы не можете зарегистрировать аккаунт, так как аккаунт уже зарегистрирован. Если Вы"
-" желаете зарегистрировать нового пользователя, Вам сначала необходимо выйти из этого аккаунта"
+"Вы не можете зарегистрировать аккаунт, так как аккаунт уже "
+"зарегистрирован. Если Вы желаете зарегистрировать нового пользователя, "
+"Вам сначала необходимо выйти из этого аккаунта"
 
-#: blueprints/users.py:41
+#: blueprints/users.py:38
 msgid "Registered success"
 msgstr "Регистрация прошла успешно"
 
-#: blueprints/users.py:49
+#: blueprints/users.py:45
 msgid "You are already logged in"
 msgstr "Вы уже вошли"
 
-#: blueprints/users.py:56
+#: blueprints/users.py:51
 msgid "Logged in successfully"
 msgstr "Вход выполнен успешно"
 
-#: templates/users/login.html:4 templates/users/login.html:11
+#: templates/base_layout.html:9
+msgid "Books by Ukrainian publishers"
+msgstr "Книги украинского издательства"
+
+#: templates/base_layout.html:18
+msgid "Logout"
+msgstr "Выйти"
+
+#: templates/base_layout.html:20 templates/users/login.html:4
+#: templates/users/login.html:11
 msgid "Login"
-msgstr "Логин"
+msgstr "Войти"
+
+#: templates/base_layout.html:21
+msgid "Register"
+msgstr "Регистрация"
+
+#: templates/books/create.html:4
+msgid "New Book"
+msgstr "Новая книга"
+
+#: templates/books/create.html:11
+msgid "Add New Book"
+msgstr "Добавить новую книгу"
+
+#: templates/books/detail.html:10
+msgid "Not available"
+msgstr "Нет в наличии"
+
+#: templates/books/edit.html:11
+msgid "Edit Book"
+msgstr "Редактировать Книгу"
+
+#: templates/books/index.html:3
+msgid "All Books"
+msgstr "Все книги"
+
+#: templates/home/index.html:5
+msgid "Book Catalogue"
+msgstr "Католог книг"
+
+#: templates/users/register.html:4
+msgid "Register User"
+msgstr "Регистрация пользователя"
+
+#: templates/users/register.html:12
+msgid "Sign Up"
+msgstr "Зарегистрироваться"
 

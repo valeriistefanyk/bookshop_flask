@@ -8,6 +8,6 @@
     {{ form.csrf_token }}
     {{ render_field(form.title) }}
     {{ render_field(form.description) }}
-    <button type="submit" class="btn btn-primary">Редагувати Книгу</button>
+    <button type="submit" class="btn btn-primary">{{ _('Edit Book') }}</button>
 </form>
 {% endblock %}

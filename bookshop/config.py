@@ -6,8 +6,8 @@ class BaseConfig:
     WTF_CSRF_ENABLED = True
     SECRET_KEY = os.getenv('SECRET_KEY', 'rand01013232')
     LANGUAGES = {
-        'uk': 'Ukrainian',
-        'ru': 'Russian',
+        'uk': 'Українська',
+        'ru': 'Русский',
         'en': 'English',
     }
 
