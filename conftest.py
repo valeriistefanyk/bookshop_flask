@@ -27,3 +27,9 @@ def authenticated_request(client):
             'password': 'examplepass',
         }, follow_redirects=True)
     yield client
+
+@pytest.fixture
+def set_language_in_session(client):
+    with client.session_transaction() as session:
+        session['language'] = 'en'
+    yield client

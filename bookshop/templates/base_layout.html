@@ -6,19 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>{% block title %}Книги українського видавництва{% endblock %} | BookShop</title>
+  <title>{% block title %}{{ _('Books by Ukrainian publishers') }}{% endblock %} | BookShop</title>
 </head>
 <body>
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="/">BookShop</a>
+
       <div class="navbar-item form-inline">
         {% if current_user.is_authenticated %}
           {{ current_user.email }}
-          <a class="nav-link" href="{{ url_for('users.logout') }}">Вийти</a>
+          <a class="nav-link" href="{{ url_for('users.logout') }}">{{ _('Logout') }}</a>
         {% else %}
-          <a class="nav-link" href="{{ url_for('users.login') }}">Увійти</a>
-          <a class="nav-link" href="{{ url_for('users.register') }}">Реєстарція</a>
+          <a class="nav-link" href="{{ url_for('users.login') }}">{{ _('Login') }}</a>
+          <a class="nav-link" href="{{ url_for('users.register') }}">{{ _('Register') }}</a>
         {% endif %}
+        <select class="form-control" onchange="location = this.value;">
+          {% for language in AVAILABLE_LANGUAGES.items() %}
+            {% if CURRENT_LANGUAGE == language[0] %}
+                <option 
+                  selected
+                  value="{{ url_for('set_language', language=language[0]) }}">
+                    {{ language[1] }}
+                  </option>
+            {% else %}
+                <option 
+                  value="{{ url_for('set_language', language=language[0]) }}">{{ language[1] }}</option>
+            {%  endif %}
+          {% endfor %}
+         </select>
       </div>
     </nav>
     {{ render_flashes() }}

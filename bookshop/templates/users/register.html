@@ -1,7 +1,7 @@
 {% extends 'base_layout.html' %}
 {% from '_formhelpers.html' import render_field %}
 
-{% block title %}Реєстрація користувача{% endblock %}
+{% block title %}{{ _('Register User') }}{% endblock %}
 
 {% block content %}
 <form method="POST">
@@ -9,6 +9,6 @@
     {{ render_field(form.email) }}
     {{ render_field(form.password) }}
     {{ render_field(form.confirm) }}
-    <button type="submit" class="btn btn-primary">Зареєструватись</button>
+    <button type="submit" class="btn btn-primary">{{ _('Sign Up') }}</button>
 </form>
 {% endblock %}

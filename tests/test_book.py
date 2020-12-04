@@ -38,11 +38,11 @@ def test_index_page(client, init_database, sample_book):
     expected_link = url_for('books.details', book_id=sample_book.id)
     assert expected_link in str(response.data)
 
-def test_details_page(client, init_database, sample_book, authenticated_request):
+def test_details_page(client, init_database, sample_book, authenticated_request, set_language_in_session):
   response = client.get(url_for('books.details', book_id=sample_book.id))
   assert response.status_code == 200
   assert 'BookShop' in str(response.data)
-  assert '...' in str(response.data)
+  assert 'Not available' in str(response.data)
 
 def test_not_found_page(client, init_database, authenticated_request):
   response = client.get(url_for('books.details', book_id=1))
