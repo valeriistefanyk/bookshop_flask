@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-04 21:14+0200\n"
+"POT-Creation-Date: 2020-12-05 16:23+0200\n"
 "PO-Revision-Date: 2020-12-04 16:08+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru_RU\n"
@@ -27,11 +27,11 @@ msgstr "Название"
 msgid "Description"
 msgstr "Описание"
 
-#: bookshop/forms.py:15 bookshop/forms.py:31
+#: bookshop/forms.py:15 bookshop/forms.py:32
 msgid "Email"
 msgstr "Email"
 
-#: bookshop/forms.py:16 bookshop/forms.py:32
+#: bookshop/forms.py:16 bookshop/forms.py:33
 msgid "Password"
 msgstr "Пароль"
 
@@ -43,13 +43,25 @@ msgstr "Пароли должны совпадать"
 msgid "Password confirm"
 msgstr "Подтверждение пароля"
 
-#: bookshop/forms.py:26
+#: bookshop/forms.py:18
+msgid "Store Name"
+msgstr "Название Магазина"
+
+#: bookshop/forms.py:27
 msgid "An account with this email already exists"
 msgstr "Аккаунт с таким email уже существует"
 
-#: bookshop/forms.py:42
+#: bookshop/forms.py:43
 msgid "Invalid email or password"
 msgstr "Неправильный email или пароль"
+
+#: bookshop/models.py:24
+msgid "Needs to have a real title"
+msgstr "Необходимо реальное название книги"
+
+#: bookshop/models.py:54
+msgid "Needs to have a real store name"
+msgstr "Необходимо реальное название магазина"
 
 #: bookshop/blueprints/users.py:22
 msgid "You need to login"
@@ -64,16 +76,16 @@ msgstr ""
 "зарегистрирован. Если Вы желаете зарегистрировать нового пользователя, "
 "Вам сначала необходимо выйти из этого аккаунта"
 
-#: bookshop/blueprints/users.py:38
+#: bookshop/blueprints/users.py:39
 #, fuzzy
 msgid "Registration successfully"
 msgstr "Регистрация прошла успешно"
 
-#: bookshop/blueprints/users.py:45
+#: bookshop/blueprints/users.py:46
 msgid "You are already logged in"
 msgstr "Вы уже вошли"
 
-#: bookshop/blueprints/users.py:51
+#: bookshop/blueprints/users.py:52
 msgid "Logged in successfully"
 msgstr "Вход выполнен успешно"
 
@@ -143,11 +155,23 @@ msgstr "Все книги"
 msgid "Book Catalogue"
 msgstr "Каталог книг"
 
+#: bookshop/templates/stores/index.html:3
+msgid "Stores"
+msgstr "Все Магазины"
+
+#: bookshop/templates/stores/index.html:24
+msgid "View more books from"
+msgstr "Больше книг от"
+
+#: bookshop/templates/stores/show.html:20
+msgid "View Details"
+msgstr "Более детально"
+
 #: bookshop/templates/users/register.html:4
 msgid "Register User"
 msgstr "Регистрация пользователя"
 
-#: bookshop/templates/users/register.html:12
+#: bookshop/templates/users/register.html:14
 msgid "Sign Up"
 msgstr "Зарегистрироваться"
 

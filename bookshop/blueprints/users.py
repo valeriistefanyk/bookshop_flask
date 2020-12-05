@@ -5,7 +5,7 @@ from flask_login import (login_user, current_user, login_required,
 from flask_babel import _
 
 from bookshop.forms import SignupForm
-from bookshop.models import User
+from bookshop.models import User, Store
 from bookshop.extenstions import db, login_manager
 from bookshop.forms import SignupForm, LoginForm
 
@@ -33,6 +33,7 @@ def register():
     if form.validate_on_submit():
         user = User.create(form.email.data, form.password.data)
         db.session.add(user)
+        store = Store(name=form.store_name.data, user=user)
         db.session.commit()
         login_user(user)
         flash(_('Registration successfully'), 'success')

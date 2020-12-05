@@ -27,3 +27,11 @@ flask translate compile
 pytest
 pytest --cov-report term-missing --cov=bookshop
 ```
+
+## Commands for Working with db
+```shell
+flask db init
+
+flask db migrate -m 'Commit message'
+flask db upgrade
+```

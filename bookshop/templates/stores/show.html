@@ -1,0 +1,28 @@
+{% extends "base_layout.html" %}
+
+{% block title %}{{ store.name }}{% endblock %}
+
+{% block content %}
+<div class="row">
+  <h1>{{ store.name }}</h1>
+</div>
+{% for book_row in books | batch(3) %}
+<div class="row mb-3">
+  {% for book in book_row %}
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ book.title }}</h5>
+          <p class="card-text">{{ book.description }}</p>
+        </div>
+        <div class="card-body">
+          <a href="{{ url_for('books.details', book_id=book.id) }}">
+            {{ _('View Details') }}
+          </a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endfor %}
+{% endblock %} 
