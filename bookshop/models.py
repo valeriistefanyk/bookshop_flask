@@ -1,6 +1,7 @@
 from werkzeug.security import generate_password_hash
 from sqlalchemy.orm import validates
 from flask_login import UserMixin
+from flask_babel import _
 
 from bookshop.extenstions import db
 
@@ -20,7 +21,7 @@ class Book(db.Model):
     @validates('title')
     def validate_title(self, key, title):
         if len(title.strip()) <= 2:
-            raise ValueError('Needs to have a real title')
+            raise ValueError(_('Needs to have a real title'))
         return title
 
 class User(UserMixin, db.Model):
@@ -50,5 +51,5 @@ class Store(db.Model):
     @validates('name')
     def validate_name(self, key, name):
         if len(name.strip()) <= 3:
-            raise ValueError('Needs to have a real name')
+            raise ValueError(_('Needs to have a real store name'))
         return name
