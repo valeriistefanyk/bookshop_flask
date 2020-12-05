@@ -45,6 +45,12 @@ def test_index_page(client, init_database):
     expected_link = url_for('books.details', book_id=book.id)
     assert expected_link not in str(response.data)
 
+def test_name_validation(client, init_database):
+  assert Store.query.count() == 0
+  with pytest.raises(ValueError):
+    create_store(name=" * ")
+  assert Store.query.count() == 0
+
 def test_store_page(client, init_database):
   store = create_store(num_books=3)
   response = client.get(url_for('store.show', store_id=store.id))

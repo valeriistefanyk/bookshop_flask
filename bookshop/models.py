@@ -46,3 +46,9 @@ class Store(db.Model):
 
     user = db.relationship('User', uselist=False, back_populates='store')
     books = db.relationship('Book', back_populates='store')
+
+    @validates('name')
+    def validate_name(self, key, name):
+        if len(name.strip()) <= 3:
+            raise ValueError('Needs to have a real name')
+        return name
