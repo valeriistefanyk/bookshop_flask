@@ -5,6 +5,7 @@ from bookshop.extenstions import db, csrf, login_manager, babel
 from bookshop.commands.translate import translate_command
 from bookshop.blueprints.books import books
 from bookshop.blueprints.users import users
+from bookshop.blueprints.stores import store_bp
 
 
 def create_app(environment_name='dev'):
@@ -45,6 +46,7 @@ def create_app(environment_name='dev'):
 
     app.register_blueprint(books, url_prefix='/books')
     app.register_blueprint(users)
+    app.register_blueprint(store_bp, url_prefix='/store')
 
     @app.errorhandler(404)
     def not_found(exception):

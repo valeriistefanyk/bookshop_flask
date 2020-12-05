@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, request, url_for
-from flask_login import login_required
+from flask_login import login_required, current_user
 from bookshop.models import Book
 from bookshop.extenstions import db
 from bookshop.forms import BookForm
@@ -23,7 +23,10 @@ def details(book_id):
 def create():
     form = BookForm()
     if form.validate_on_submit():
-        book = Book(title=form.title.data, description=form.description.data)
+        book = Book(title=form.title.data,
+                    creator=current_user,
+                    store=current_user.store,
+                    description=form.description.data)
         db.session.add(book)
         db.session.commit()
         return redirect(url_for('books.details', book_id=book.id))
