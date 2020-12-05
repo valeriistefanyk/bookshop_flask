@@ -9,6 +9,8 @@ class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255), nullable=False)
     description = db.Column(db.String(120), nullable=True)
+    price_kopecks = db.Column(db.Integer)
+    picture_url = db.Column(db.Text)
     creator_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     store_id = db.Column(db.Integer, db.ForeignKey('store.id'))
 

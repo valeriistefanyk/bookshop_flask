@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, session, redirect
 
 from bookshop.config import configuration
-from bookshop.extenstions import db, csrf, login_manager, babel
+from bookshop.extenstions import (db, csrf, login_manager, babel, migrate)
 from bookshop.commands.translate import translate_command
 from bookshop.blueprints.books import books
 from bookshop.blueprints.users import users
@@ -16,6 +16,7 @@ def create_app(environment_name='dev'):
     csrf.init_app(app)
     login_manager.init_app(app)
     babel.init_app(app)
+    migrate.init_app(app, db, render_as_batch=True)
 
     @app.context_processor
     def inject_conf_var():
