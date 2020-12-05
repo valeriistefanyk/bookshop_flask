@@ -7,8 +7,10 @@ from bookshop.extenstions import db
 
 EXAMPLE_EMAIL = 'test@example.com'
 EXAMPLE_PASSWORD = 'test123'
+STORE_NAME = 'Test Store'
 
 VALID_REGISTER_PARAMS = {
+    'store_name': STORE_NAME,
     'email': EXAMPLE_EMAIL,
     'password': EXAMPLE_PASSWORD,
     'confirm': EXAMPLE_PASSWORD
