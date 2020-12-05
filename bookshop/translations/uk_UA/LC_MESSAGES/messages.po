@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-04 21:14+0200\n"
+"POT-Creation-Date: 2020-12-05 15:36+0200\n"
 "PO-Revision-Date: 2020-12-04 16:08+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk_UA\n"
@@ -27,11 +27,11 @@ msgstr "Назва"
 msgid "Description"
 msgstr "Опис"
 
-#: bookshop/forms.py:15 bookshop/forms.py:31
+#: bookshop/forms.py:15 bookshop/forms.py:32
 msgid "Email"
 msgstr "Email"
 
-#: bookshop/forms.py:16 bookshop/forms.py:32
+#: bookshop/forms.py:16 bookshop/forms.py:33
 msgid "Password"
 msgstr "Пароль"
 
@@ -43,11 +43,15 @@ msgstr "Паролі повинні збігатися"
 msgid "Password confirm"
 msgstr "Підтвердження пароля"
 
-#: bookshop/forms.py:26
+#: bookshop/forms.py:18
+msgid "Store Name"
+msgstr "Назва Магазину"
+
+#: bookshop/forms.py:27
 msgid "An account with this email already exists"
 msgstr "Акаунт з цим email вже існує"
 
-#: bookshop/forms.py:42
+#: bookshop/forms.py:43
 msgid "Invalid email or password"
 msgstr "Неправильний email або пароль"
 
@@ -64,16 +68,16 @@ msgstr ""
 "Якщо Вы бажаєте зареєструвати нового користувача, Вам потрібно спочатку "
 "вийти з цього акаунту"
 
-#: bookshop/blueprints/users.py:38
+#: bookshop/blueprints/users.py:39
 #, fuzzy
 msgid "Registration successfully"
 msgstr "Реєстрація пройшла успішно"
 
-#: bookshop/blueprints/users.py:45
+#: bookshop/blueprints/users.py:46
 msgid "You are already logged in"
 msgstr "Ви вже увійшли"
 
-#: bookshop/blueprints/users.py:51
+#: bookshop/blueprints/users.py:52
 msgid "Logged in successfully"
 msgstr "Вхід виконано успішно"
 
@@ -143,11 +147,23 @@ msgstr "Всі книги"
 msgid "Book Catalogue"
 msgstr "Каталог книг"
 
+#: bookshop/templates/stores/index.html:3
+msgid "Stores"
+msgstr "Всі Магазини"
+
+#: bookshop/templates/stores/index.html:24
+msgid "View more books from"
+msgstr "Більше книг від"
+
+#: bookshop/templates/stores/show.html:20
+msgid "View Details"
+msgstr "Більш детально"
+
 #: bookshop/templates/users/register.html:4
 msgid "Register User"
 msgstr "Реєстрація користувача"
 
-#: bookshop/templates/users/register.html:12
+#: bookshop/templates/users/register.html:14
 msgid "Sign Up"
 msgstr "Зареєструватись"
 
